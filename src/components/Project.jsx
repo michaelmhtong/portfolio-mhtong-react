@@ -13,7 +13,25 @@ const Project = () => {
       imgAlt: "",
       skills: ["Javascript", "React", "Tailwind CSS", "NodeJS", "Stripe", "MongoDB", "Redux"],
       description:
-        "Developed and implemented a full-stack webshop utilizing React, MongoDB, and JWT for user authorization, Integrated Stripe payment functionality to enable secure transactions within the webshop",
+        "Full-stack webshop utilizing React, MongoDB, and JWT for user authorization, integrated Stripe payment functionality to enable secure transactions within the webshop",
+    },
+    {
+      title: "ReCoNet",
+      year: "2022",
+      href: "",
+      video: "CrXdIugj3z0",
+      imgSrc: "/assets/eshop_computer.jpg",
+      imgAlt: "",
+      skills: [
+        "Javascript",
+        "Threejs",
+        "Rhino",
+        "Grasshopper",
+        "Archicad",
+        "Twinmotion (Epic Game)",
+      ],
+      description:
+        "Housing complex designed in the Architectural Engineering Graduation Studio. The project is visualized on a website using Javascript, Three.js, Twinmotion, and Building Information Modelling (BIM) software.",
     },
   ];
 
@@ -21,7 +39,7 @@ const Project = () => {
     <div className="relative bg-white pt-16 pb-32 overflow-hidden">
       {projects.map((project, index) => (
         <div className="relative" key={index}>
-          <div className="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
+          <div className="lg:pb-16 lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
             {/* Content */}
             <div className="px-4 max-w-xl mx-auto sm:px-6 lg:py-16 lg:max-w-none lg:mx-0 lg:px-0">
               <div className="mt-6">
@@ -49,18 +67,27 @@ const Project = () => {
                   <HiGlobeAlt className="-ml-0.5 mr-2 h-4 w-4" aria-hidden="true" />
                   Live demo
                 </button>
+                {project.video && (
+                  <button
+                    type="button"
+                    className="inline-flex items-center px-3 py-2 border border-transparent shadow-sm text-sm leading-4 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  >
+                    <HiGlobeAlt className="-ml-0.5 mr-2 h-4 w-4" aria-hidden="true" />
+                    Video
+                  </button>
+                )}
               </div>
             </div>
 
             {/* Image */}
-            <div className="relative mt-4">
+            <div className="relative mx-16">
               <Tilt
-                scale={0.8}
+                // scale={0.8}
                 perspective={800}
                 style={{ transformStyle: "preserve-3d" }}
-                reset={false}
-                tiltAngleYInitial={10}
-                gyroscope ={true}
+                // reset={false}
+                tiltAngleYInitial={15}
+                gyroscope={true}
               >
                 <div className="absolute">
                   <img src={computerSrc} alt="/"></img>
