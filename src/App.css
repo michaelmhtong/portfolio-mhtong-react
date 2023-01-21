@@ -1,38 +1,34 @@
-.App {
-  text-align: center;
+.title {
+  @apply absolute top-24 tracking-[20px] uppercase text-[#62973D] text-2xl;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.pageTransition {
+  @apply h-screen flex relative overflow-hidden flex-col md:flex-row max-w-full px-10 justify-evenly mx-auto items-center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.heroButton {
+  @apply ml-10 tracking-widest uppercase text-sm text-white transition-all hover:border-b;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.contactInput {
+  @apply outline-none bg-[#62973D]/10 rounded-sm border-b px-6 py-4 
+  text-[#41493B] placeholder-[#A5AE9D] transition-all 
+  focus:border-[#62973D] focus:text-black hover:border-[#62973D]/40;
 }
 
-.App-link {
-  color: #61dafb;
+.themeText {
+  @apply text-[#62973D];
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.timeline-container {
+  @apply relative pt-2 sm:pl-28 sm:pt-0 md:w-1/2 md:ml-auto md:pl-16;
+}
+.timeline-container-left {
+  @apply md:ml-0 md:mr-auto md:pl-0 md:pr-16;
+}
+.timeline-pointer {
+  @apply absolute inset-0 left-10 h-4 w-4 transform rotate-45 bg-white sm:top-10 sm:left-20 md:left-14;
+}
+.timeline-pointer-left {
+  @apply md:left-auto md:right-14;
 }
