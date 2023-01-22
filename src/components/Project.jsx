@@ -1,7 +1,12 @@
+import { useState } from "react";
 import { HiGlobeAlt } from "react-icons/hi";
 import Tilt from "react-parallax-tilt";
+import ModalPano from "./Model/ModalPano";
+import ModalYoutube from "./Model/ModalYoutube";
 
 const Project = () => {
+  const [openModalVideo, setOpenModalVideo] = useState(false);
+  const [openModalPano, setOpenModalPano] = useState(false);
   const projects = [
     {
       title: "LuxeShop (with Stripe payment)",
@@ -73,24 +78,30 @@ const Project = () => {
                   ))}
                 </div>
                 <p>{project.description}</p>
-                <button
-                  type="button"
-                  className="inline-flex items-center px-3 py-2 border border-transparent shadow-sm text-sm leading-4 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                >
-                  <HiGlobeAlt className="-ml-0.5 mr-2 h-4 w-4" aria-hidden="true" />
-                  Live demo
-                </button>
+                <div>
+                  <button
+                    type="button"
+                    onClick={() => setOpenModalPano(true)}
+                    className="inline-flex items-center px-3 py-2 border border-transparent shadow-sm text-sm leading-4 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  >
+                    <HiGlobeAlt className="-ml-0.5 mr-2 h-4 w-4" aria-hidden="true" />
+                    Live demo
+                  </button>
+                  <ModalPano open={openModalPano} onClose={() => setOpenModalPano(false)} />
+                </div>
 
                 {/* only show if there is video */}
                 {project.video && (
                   <div>
                     <button
                       type="button"
+                      onClick={() => setOpenModalVideo(true)}
                       className="inline-flex items-center px-3 py-2 border border-transparent shadow-sm text-sm leading-4 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                     >
                       <HiGlobeAlt className="-ml-0.5 mr-2 h-4 w-4" aria-hidden="true" />
                       Video
                     </button>
+                    <ModalYoutube open={openModalVideo} onClose={() => setOpenModalVideo(false)} />
                   </div>
                 )}
               </div>
