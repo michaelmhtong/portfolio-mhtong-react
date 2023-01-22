@@ -1,27 +1,40 @@
-import React from "react";
 import { HiGlobeAlt } from "react-icons/hi";
 import Tilt from "react-parallax-tilt";
 
 const Project = () => {
-  const computerSrc = "/assets/devices_computer.png";
   const projects = [
     {
       title: "LuxeShop (with Stripe payment)",
-      year: "2023",
+      year: "Jan 2023",
       href: "",
       imgSrc: "/assets/eshop_computer.jpg",
       imgAlt: "",
+      deviceSrc: "/assets/devices_computer.png",
+      deviceAlt: "",
       skills: ["Javascript", "React", "Tailwind CSS", "NodeJS", "Stripe", "MongoDB", "Redux"],
       description:
         "Full-stack webshop utilizing React, MongoDB, and JWT for user authorization, integrated Stripe payment functionality to enable secure transactions within the webshop",
     },
     {
+      title: "ShadowStrike",
+      year: "Nov 2022",
+      href: "",
+      imgSrc: "/assets/game_tablet.jpg",
+      imgAlt: "",
+      deviceSrc: "/assets/devices_tablet.png",
+      deviceAlt: "",
+      skills: ["Javascript", "p5.js", "Algorithm"],
+      description: "2D shooting game utilizing a ray-casting algorithm for the game mechanics",
+    },
+    {
       title: "ReCoNet",
-      year: "2022",
+      year: "Jun 2022",
       href: "",
       video: "CrXdIugj3z0",
-      imgSrc: "/assets/eshop_computer.jpg",
+      imgSrc: "/assets/reconet_mobile.jpg",
       imgAlt: "",
+      deviceSrc: "/assets/device_holding_mobile_landscape.png",
+      deviceAlt: "",
       skills: [
         "Javascript",
         "Threejs",
@@ -67,14 +80,18 @@ const Project = () => {
                   <HiGlobeAlt className="-ml-0.5 mr-2 h-4 w-4" aria-hidden="true" />
                   Live demo
                 </button>
+
+                {/* only show if there is video */}
                 {project.video && (
-                  <button
-                    type="button"
-                    className="inline-flex items-center px-3 py-2 border border-transparent shadow-sm text-sm leading-4 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                  >
-                    <HiGlobeAlt className="-ml-0.5 mr-2 h-4 w-4" aria-hidden="true" />
-                    Video
-                  </button>
+                  <div>
+                    <button
+                      type="button"
+                      className="inline-flex items-center px-3 py-2 border border-transparent shadow-sm text-sm leading-4 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    >
+                      <HiGlobeAlt className="-ml-0.5 mr-2 h-4 w-4" aria-hidden="true" />
+                      Video
+                    </button>
+                  </div>
                 )}
               </div>
             </div>
@@ -90,15 +107,25 @@ const Project = () => {
                 gyroscope={true}
               >
                 <div className="absolute">
-                  <img src={computerSrc} alt="/"></img>
+                  <img src={project.deviceSrc} alt={project.deviceAlt}></img>
                 </div>
-                <div
-                  style={{ transform: "translateZ(50px) scale(0.9)" }}
-                  className="absolute shadow-2xl"
-                >
-                  {/* sm:pl-6 md:-mr-16 lg:px-0 lg:m-0 lg:relative lg:h-full */}
-                  <img src={project.imgSrc} alt={project.imgAlt}></img>
-                </div>
+                {project.title !== "ReCoNet" ? (
+                  <div
+                    style={{ transform: "translateZ(100px) scale(0.88)" }}
+                    className="absolute shadow-2xl"
+                  >
+                    {/* sm:pl-6 md:-mr-16 lg:px-0 lg:m-0 lg:relative lg:h-full */}
+                    <img src={project.imgSrc} alt={project.imgAlt}></img>
+                  </div>
+                ) : (
+                  <div
+                    style={{ transform: "translateZ(100px) scale(0.88)" }}
+                    className="absolute shadow-2xl top-12 right-10"
+                  >
+                    {/* sm:pl-6 md:-mr-16 lg:px-0 lg:m-0 lg:relative lg:h-full */}
+                    <img src={project.imgSrc} alt={project.imgAlt}></img>
+                  </div>
+                )}
               </Tilt>
             </div>
           </div>
