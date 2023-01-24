@@ -20,6 +20,10 @@
   @apply text-[#62973D];
 }
 
+.theme-bg-green {
+  @apply bg-[#62973D];
+}
+
 .timeline-container {
   @apply relative pt-2 sm:pl-28 sm:pt-0 md:w-1/2 md:ml-auto md:pl-16;
 }

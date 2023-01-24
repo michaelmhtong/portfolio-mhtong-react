@@ -2,7 +2,13 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        heading: ["Gilroy"],
+        oblique: ["LibreBaskerville"],
+        body: ["Lato"],
+      },
+    },
   },
   plugins: [],
 };

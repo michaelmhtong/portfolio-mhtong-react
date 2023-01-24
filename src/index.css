@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("../public/assets/font/Gilroy-ExtraBold.otf");
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("../public/assets/font/Lato-Regular.ttf");
+}
+
+@font-face {
+    font-family: "LibreBaskerville";
+    src: url("../public/assets/font/LibreBaskerville-Italic.ttf");
+  }
+  
