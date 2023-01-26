@@ -1,3 +1,7 @@
+html {
+  @apply text-[#41493B];
+}
+
 .title {
   @apply absolute top-24 tracking-[20px] uppercase text-[#62973D] text-2xl;
 }
@@ -14,14 +18,6 @@
   @apply outline-none bg-[#62973D]/10 rounded-sm border-b px-6 py-4 
   text-[#41493B] placeholder-[#A5AE9D] transition-all 
   focus:border-[#62973D] focus:text-black hover:border-[#62973D]/40;
-}
-
-.themeText {
-  @apply text-[#62973D];
-}
-
-.theme-bg-green {
-  @apply bg-[#62973D];
 }
 
 .timeline-container {
