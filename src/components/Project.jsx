@@ -50,7 +50,7 @@ const Project = () => {
   const symbol = "/assets/symbol.svg";
 
   return (
-    <div className="px-12 py-12 bg-silver">
+    <div className="px-12 py-12 bg-silver md:px-32 md:py-20 lg:pt-10 lg:pb-28 xl:px-64 xl:pb-32">
       {/* title */}
       <div className="pb-8">
         <img src={symbol} alt="/" className="w-10 h-10 cursor-pointer inline-block"></img>
@@ -66,33 +66,45 @@ const Project = () => {
         </div>
       </div>
       {/* content */}
-      <div>
-        {projects.map((project, index) => (
-          <div id={index} className="py-6">
+
+      {projects.map((project, index) => (
+        <div
+          id={index}
+          className={`py-6 md:py-10 lg:flex lg:space-x-24 lg:py-12 xl:py-16 ${
+            index % 2 !== 0 ? "lg:flex-row-reverse lg:space-x-0 lg:justify-between" : ""
+          }`}
+        >
           {/* img */}
-            <img src={project.imgSrc} className="pb-4 w-full"></img>
+          <img
+            src={project.imgSrc}
+            className="pb-4 w-full md:w-10/12 md:container md:m-auto lg:w-5/12 lg:mx-0 lg:my-auto"
+          ></img>
+          {/* text */}
+          <div className="lg:self-center">
             <div className="font-oblique text-xl">0{index + 1}.</div>
-            <div className="font-heading text-2xl text-palm">{project.title}</div>
-            <div className="font-heading text-sm">{project.year}</div>
+            <div className="font-heading text-2xl text-palm lg:text-3xl xl:text-4xl">
+              {project.title}
+            </div>
+            <div className="font-heading text-sm lg:text-base xl:text:lg">{project.year}</div>
             {/* badges */}
             <div className="py-1">
               {project.skills.map((skill, index) => (
                 <span
                   key={index}
-                  className="inline-flex items-center mr-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-50"
+                  className="inline-flex items-center mr-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-50 lg:mr-2"
                 >
                   {skill}
                 </span>
               ))}
             </div>
-            <div className="text-sm pt-3 pb-6">{project.description}</div>
-            <div className="font-oblique text-base">
+            <div className="pt-3 pb-6 text-sm lg:text-base">{project.description}</div>
+            <div className="font-oblique text-base lg:text-lg xl:text-xl">
               <span className="underline">Live demo</span> /{" "}
               <span className="underline">Github</span>
             </div>
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </div>
     // <div className="relative bg-white pt-16 pb-32 overflow-hidden">
     //   {projects.map((project, index) => (
