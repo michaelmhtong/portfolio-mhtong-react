@@ -11,7 +11,8 @@ module.exports = {
       colors: {
         palm: "#62973d",
         silver: "#f2f2f2",
-        olive: "41493b",
+        olive: "#41493b",
+        light: "#a5ae9d",
       },
     },
   },
