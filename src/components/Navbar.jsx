@@ -20,7 +20,7 @@ const Navbar = () => {
         {/* icon for mobile */}
         <div
           onClick={handleNav}
-          className="fixed cursor-pointer z-30 flex justify-end w-full px-10 pt-14"
+          className="fixed z-30 flex justify-end w-full px-10 pt-14"
         >
           <HiOutlineMenuAlt3
             size={40}
@@ -31,7 +31,7 @@ const Navbar = () => {
         {/* icon for desktop */}
         <div
           onClick={handleNav}
-          className="hidden cursor-pointer lg:fixed lg:z-30 lg:flex lg:items-center lg:h-full lg:px-10"
+          className="hidden lg:fixed lg:z-30 lg:flex lg:items-center lg:h-full lg:px-10"
         >
           <HiOutlineMenuAlt3 size={40} className="top-5" />
         </div>
@@ -51,7 +51,7 @@ const Navbar = () => {
             <div className="flex flex-col justify-between h-full">
               {/* tab top */}
               <div>
-                <NavLogo className="w-10 h-10 fill-olive cursor-pointer md:inline-block lg:w-12 lg:h-12 xl:w-14 xl:h-14" />
+                <NavLogo className="w-10 h-10 fill-olive md:inline-block lg:w-12 lg:h-12 xl:w-14 xl:h-14" />
                 <ul className="grid gap-4 font-heading text-3xl pt-7 md:gap-5 lg:pt-9 lg:gap-6 lg:text-4xl xl:pt-10 xl:gap-7">
                   <li>
                     <Link to="#home" onClick={handleNav} smooth>
@@ -82,10 +82,28 @@ const Navbar = () => {
               </div>
               {/* tab bottom */}
               <div className="">
-                <p className="font-oblique text-lg pb-1 md:text-xl lg:text-2xl">Contact me.</p>
+                <a href="mailto:mickmhtong@gmail.com">
+                  <p className="font-oblique text-lg pb-1 md:text-xl lg:text-2xl">Contact me.</p>
+                </a>
                 <p>
                   <div className="font-heading">mickmhtong@gmail.com</div>
-                  <div>github | linkedin</div>
+                  <div>
+                    <a
+                      href="https://github.com/michaelmhtong"
+                      target="_blank"
+                      className="underline"
+                    >
+                      github
+                    </a>{" "}
+                    | {}
+                    <a
+                      href="https://www.linkedin.com/in/mhtong/"
+                      target="_blank"
+                      className="underline"
+                    >
+                      linkedin
+                    </a>
+                  </div>
                 </p>
                 <p className="hidden md:block md:text-xs md:pt-3">
                   <div>© 2023 Michael Tong</div>
