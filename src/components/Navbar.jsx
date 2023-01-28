@@ -35,35 +35,46 @@ const Navbar = () => {
       <section className="fixed z-50 left-0 top-0 w-full h-screen">
         <div className="flex relative h-screen">
           {/* tab content */}
-          <div className="bg-silver grow-[5] pt-20 pl-12">
-            <div className="flex flex-col">
-              <img
-                src={NavLogo}
-                alt="/"
-                className="w-10 h-10 fill-blue-500 cursor-pointer md:inline-block"
-              />
-              <ul className="grid gap-4 font-heading text-2xl pt-7">
-                <li>
-                  Home<span className="text-palm">.</span>
-                </li>
-                <li>
-                  About<span className="text-palm">.</span>
-                </li>
-                <li>
-                  Skill<span className="text-palm">.</span>
-                </li>
-                <li>
-                  Experience<span className="text-palm">.</span>
-                </li>
-                <li>
-                  Project<span className="text-palm">.</span>
-                </li>
-              </ul>
-              <p className="">
-                <div className="font-oblique text-lg pb-1">Contact me.</div>
-                <div className="font-heading">mickmhtong@gmail.com</div>
-                <div>github | linkedin</div>
-              </p>
+          <div className="bg-silver grow-[5] pt-20 pb-8 pl-12 md:pl-20 md:pb-10 lg:pl-32 lg:pb-12 xl:pb-16">
+            <div className="flex flex-col justify-between h-full">
+              {/* tab top */}
+              <div>
+                <img
+                  src={NavLogo}
+                  alt="/"
+                  className="w-10 h-10 fill-blue-500 cursor-pointer md:inline-block lg:w-12 lg:h-12 xl:w-14 xl:h-14"
+                />
+                <ul className="grid gap-4 font-heading text-3xl pt-7 md:gap-5 lg:pt-9 lg:gap-6 lg:text-4xl xl:pt-10 xl:gap-7">
+                  <li>
+                    Home<span className="text-palm">.</span>
+                  </li>
+                  <li>
+                    About<span className="text-palm">.</span>
+                  </li>
+                  <li>
+                    Skill<span className="text-palm">.</span>
+                  </li>
+                  <li>
+                    Experience<span className="text-palm">.</span>
+                  </li>
+                  <li>
+                    Project<span className="text-palm">.</span>
+                  </li>
+                </ul>
+              </div>
+              {/* tab bottom */}
+              <div className="">
+                <p className="font-oblique text-lg pb-1 md:text-xl lg:text-2xl">Contact me.</p>
+                <p>
+                  <div className="font-heading">mickmhtong@gmail.com</div>
+                  <div>github | linkedin</div>
+                </p>
+                <p className="hidden md:block md:text-xs md:pt-3">
+                  <div>© 2023 Michael Tong</div>
+                  <div>Design in Figma</div>
+                  <div>Build in React, Tailwind CSS and Framer Motion</div>
+                </p>
+              </div>
             </div>
           </div>
 
