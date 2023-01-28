@@ -1,19 +1,16 @@
 import "./App.css";
-import Hero from "./components/Hero";
-import Skill from "./components/Skill";
-import Experience from "./components/Experience";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Project from "./components/Project";
+import Home from "./pages/Home";
 
 function App() {
   return (
-    <div>
-      <Navbar />
-      <Hero />
-      <Skill />
-      <Experience />
-      <Project />
-    </div>
+    <>
+      <Router>
+        <Navbar />
+        <Home />
+      </Router>
+    </>
   );
 }
 
