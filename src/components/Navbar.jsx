@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from "react-icons/ai";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { HiOutlineMenuAlt3, HiOutlineX } from "react-icons/hi";
+import { ReactComponent as NavLogo } from "../image/logo.svg";
 
 const Navbar = () => {
-  const NavLogo = "/assets/logo.svg";
   const [nav, setNav] = useState(false);
   const handleNav = () => {
     setNav(!nav);
@@ -18,32 +18,37 @@ const Navbar = () => {
       {/* Navbar */}
       <section>
         {/* icon for mobile */}
-        <div className="fixed z-30 flex justify-end w-full px-10 pt-14">
+        <div onClick={handleNav} className="fixed z-30 flex justify-end w-full px-10 pt-14">
           <HiOutlineMenuAlt3
             size={40}
-            className="md:hidden top-5 text-white bg-palm border-palm rounded-full border-4"
+            className="lg:hidden top-5 text-white bg-palm border-palm rounded-full border-4"
           />
         </div>
 
         {/* icon for desktop */}
-        <div className="hidden lg:fixed lg:z-30 lg:flex lg:items-center lg:h-full lg:px-10">
+        <div
+          onClick={handleNav}
+          className="hidden lg:fixed lg:z-30 lg:flex lg:items-center lg:h-full lg:px-10"
+        >
           <HiOutlineMenuAlt3 size={40} className="top-5" />
         </div>
       </section>
 
       {/* Menu tab */}
-      <section className="fixed z-50 left-0 top-0 w-full h-screen">
+      <section
+        className={
+          nav
+            ? "fixed z-50 left-0 top-0 w-full h-screen ease-in duration-500"
+            : "fixed z-50 left-[-100%] top-0 w-full h-screen ease-in duration-500"
+        }
+      >
         <div className="flex relative h-screen">
           {/* tab content */}
           <div className="bg-silver grow-[5] pt-20 pb-8 pl-12 md:pl-20 md:pb-10 lg:pl-32 lg:pb-12 xl:pb-16">
             <div className="flex flex-col justify-between h-full">
               {/* tab top */}
               <div>
-                <img
-                  src={NavLogo}
-                  alt="/"
-                  className="w-10 h-10 fill-blue-500 cursor-pointer md:inline-block lg:w-12 lg:h-12 xl:w-14 xl:h-14"
-                />
+                <NavLogo className="w-10 h-10 fill-olive cursor-pointer md:inline-block lg:w-12 lg:h-12 xl:w-14 xl:h-14" />
                 <ul className="grid gap-4 font-heading text-3xl pt-7 md:gap-5 lg:pt-9 lg:gap-6 lg:text-4xl xl:pt-10 xl:gap-7">
                   <li>
                     Home<span className="text-palm">.</span>
@@ -79,7 +84,7 @@ const Navbar = () => {
           </div>
 
           {/* close tab */}
-          <div className="flex justify-center bg-palm grow pt-20">
+          <div onClick={handleNav} className="flex justify-center bg-palm grow pt-20">
             <HiOutlineX size={30} className="" />
           </div>
         </div>
