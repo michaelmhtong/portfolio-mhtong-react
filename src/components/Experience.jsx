@@ -1,5 +1,6 @@
 import React from "react";
-import { motion, useScroll } from "framer-motion";
+import { easeInOut, motion, useScroll } from "framer-motion";
+import ModalHeading from "./model/ModalHeading";
 
 const Experience = () => {
   const { scrollYProgress } = useScroll();
@@ -8,7 +9,7 @@ const Experience = () => {
     {
       imageSrc: "/assets/ptsa.svg",
       imageAlt: "",
-      position: "Assistant Designer (Computational Design)",
+      position: "Assistant Designer (Computational Design).",
       companyName: "Popma ter Steege Architecten",
       skillSrc: [""],
       skilAlt: [""],
@@ -22,7 +23,7 @@ const Experience = () => {
     {
       imageSrc: "/assets/ptg.svg",
       imageAlt: "",
-      position: "Architectural Designer",
+      position: "Architectural Designer.",
       companyName: "P&T Architects and Engineers Limited",
       skillSrc: [""],
       skilAlt: [""],
@@ -36,7 +37,7 @@ const Experience = () => {
     {
       imageSrc: "/assets/biad.svg",
       imageAlt: "",
-      position: "Intern (Computational Design)",
+      position: "Intern (Computational Design).",
       companyName: "Beijing Institute of Architectural Design (BIAD) Co. Ltd.",
       skillSrc: [""],
       skilAlt: [""],
@@ -51,40 +52,45 @@ const Experience = () => {
   const symbol = "/assets/symbol.svg";
 
   return (
-    <div className="flex flex-col px-12 py-16 bg-silver">
+    <div id="experience" className="flex flex-col px-12 py-12 bg-silver md:px-32 md:py-20 xl:px-64">
       {/* title */}
-      <div className="text-right">
-        <img src={symbol} alt="/" className="w-10 h-10 cursor-pointer inline-block"></img>
-        <div>
-          <p className="pb-3 font-heading text-palm text-5xl xl:text-6xl">
-            <div className="pb-2">EXP</div>
-            <div>ERIENCE.</div>
-          </p>
-          <p className="pb-2 font-heading text-2xl xl:text-3xl">
-            A wide range of <i className="font-oblique">Web</i> technology
-            <em className="text-palm">.</em>
-          </p>
-        </div>
+      <div className="text-right pb-4">
+        <ModalHeading title="Experience" subtitle="Journey towards * industry" word="Tech" />
       </div>
-      <div className="relative container flex flex-col space-y-10 pb-10">
+      <div className="relative container flex flex-col space-y-10 pb-10 md:space-y-14">
         {/* timeline */}
-        <div className="absolute z-0 w-0.5 left-1.5 h-full bg-palm inset-0"></div>
+        <motion.div
+          initial={{ x: -100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ ease: easeInOut, duration: 2 }}
+          className="absolute z-0 w-0.5 left-1.5 h-full bg-palm inset-0"
+        ></motion.div>
         {/* content */}
         {experiences.map((experience, index) => (
-          <div id={index} className="pl-8">
+          <motion.div
+            initial={{ x: 500, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ ease: easeInOut, duration: 2 }}
+            id={index}
+            className="pl-8"
+          >
             {/* point circle */}
             <span className="absolute left-0 h-4 w-4 rounded-full bg-palm"></span>
             <span className="font-body text-xs tracking-wide">
               {experience.startDate} - {experience.endDate}
             </span>
-            <h1 className="pt-1 font-heading text-2xl text-palm">{experience.position}</h1>
-            <p className="pt-1 font-oblique text-base text-light">{experience.companyName}</p>
+            <h1 className="pt-1 font-heading text-2xl text-palm lg:text-3xl">
+              {experience.position}
+            </h1>
+            <p className="pt-1 font-oblique text-base text-light lg:text-xl">
+              {experience.companyName}
+            </p>
             <ul className="text-sm pt-3">
               {experience.summaryPoints.map((point, index) => (
                 <li key={index}>{point}</li>
               ))}
             </ul>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
