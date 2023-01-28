@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from "react-icons/ai";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { HiOutlineMenuAlt3, HiOutlineX } from "react-icons/hi";
 import { ReactComponent as NavLogo } from "../image/logo.svg";
+import { HashLink as Link } from "react-router-hash-link";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -18,7 +18,10 @@ const Navbar = () => {
       {/* Navbar */}
       <section>
         {/* icon for mobile */}
-        <div onClick={handleNav} className="fixed z-30 flex justify-end w-full px-10 pt-14">
+        <div
+          onClick={handleNav}
+          className="fixed cursor-pointer z-30 flex justify-end w-full px-10 pt-14"
+        >
           <HiOutlineMenuAlt3
             size={40}
             className="lg:hidden top-5 text-white bg-palm border-palm rounded-full border-4"
@@ -28,7 +31,7 @@ const Navbar = () => {
         {/* icon for desktop */}
         <div
           onClick={handleNav}
-          className="hidden lg:fixed lg:z-30 lg:flex lg:items-center lg:h-full lg:px-10"
+          className="hidden cursor-pointer lg:fixed lg:z-30 lg:flex lg:items-center lg:h-full lg:px-10"
         >
           <HiOutlineMenuAlt3 size={40} className="top-5" />
         </div>
@@ -44,26 +47,36 @@ const Navbar = () => {
       >
         <div className="flex relative h-screen">
           {/* tab content */}
-          <div className="bg-silver grow-[5] pt-20 pb-8 pl-12 md:pl-20 md:pb-10 lg:pl-32 lg:pb-12 xl:pb-16">
+          <div className="bg-silver grow-[5] pt-20 pb-8 pl-12 md:pl-20 md:pb-12 lg:pl-32 lg:pb-20 xl:pb-24">
             <div className="flex flex-col justify-between h-full">
               {/* tab top */}
               <div>
                 <NavLogo className="w-10 h-10 fill-olive cursor-pointer md:inline-block lg:w-12 lg:h-12 xl:w-14 xl:h-14" />
                 <ul className="grid gap-4 font-heading text-3xl pt-7 md:gap-5 lg:pt-9 lg:gap-6 lg:text-4xl xl:pt-10 xl:gap-7">
                   <li>
-                    Home<span className="text-palm">.</span>
+                    <Link to="#home" onClick={handleNav} smooth>
+                      Home<span className="text-palm">.</span>
+                    </Link>
                   </li>
                   <li>
-                    About<span className="text-palm">.</span>
+                    <Link to="#about" onClick={handleNav} smooth>
+                      About<span className="text-palm">.</span>
+                    </Link>
                   </li>
                   <li>
-                    Skill<span className="text-palm">.</span>
+                    <Link to="#skill" onClick={handleNav} smooth>
+                      Skill<span className="text-palm">.</span>
+                    </Link>
                   </li>
                   <li>
-                    Experience<span className="text-palm">.</span>
+                    <Link to="#experience" onClick={handleNav} smooth>
+                      Experience<span className="text-palm">.</span>
+                    </Link>
                   </li>
                   <li>
-                    Project<span className="text-palm">.</span>
+                    <Link to="#project" onClick={handleNav} smooth>
+                      Project<span className="text-palm">.</span>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -84,7 +97,10 @@ const Navbar = () => {
           </div>
 
           {/* close tab */}
-          <div onClick={handleNav} className="flex justify-center bg-palm grow pt-20">
+          <div
+            onClick={handleNav}
+            className="flex justify-center cursor-pointer bg-palm grow pt-20"
+          >
             <HiOutlineX size={30} className="" />
           </div>
         </div>
