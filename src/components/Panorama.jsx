@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import React, { Suspense, useRef } from "react";
+import React, { useRef } from "react";
 import { Canvas, extend, useFrame, useThree, useLoader } from "react-three-fiber";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
@@ -16,7 +16,7 @@ const Panorama = ({ src }) => {
   }
 
   return (
-    <div style={{ aspectRatio: 2.39 / 1 }}>
+    <div className="h-screen" style={{ aspectRatio: 2.39 / 1 }}>
       <Canvas camera={{ position: [0, 0, 0.1], fov: 70 }}>
         <Controls
           enableZoom={false}
