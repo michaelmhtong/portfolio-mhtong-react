@@ -75,7 +75,7 @@ const Experience = () => {
         <div className="relative container flex flex-col space-y-10 pb-10 md:space-y-14">
           {/* timeline */}
           <div className="absolute z-0 w-0.5 left-[6.5px] h-full inset-0">
-            <svg width="full" height="full">
+            <svg height="100%">
               <motion.line
                 y2="100%"
                 stroke="#62973d"
@@ -89,7 +89,7 @@ const Experience = () => {
           {/* content */}
           {experiences.map((experience, index) => (
             <motion.div
-              id={index}
+              key={index}
               className="overflow-hidden pl-8"
               initial={{ x: 100, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}

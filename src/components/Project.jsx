@@ -91,7 +91,7 @@ const Project = () => {
       {/* content */}
       {projects.map((project, index) => (
         <motion.div
-          id={index}
+          key={index}
           className={`py-6 md:py-10 lg:flex lg:py-12 xl:py-16 ${
             index % 2 !== 0 ? "lg:flex-row-reverse" : ""
           }`}
@@ -131,12 +131,12 @@ const Project = () => {
             <div className="pt-3 pb-6 text-sm lg:text-base xl:text-lg">{project.description}</div>
             <div className="font-oblique text-base lg:text-lg xl:text-xl 2xl:text-2xl">
               {project.links.map((link, index) => (
-                <>
+                <div key={index}>
                   <a href={link.href} target="_blank">
                     <span className="underline">{link.text}</span>
                   </a>
                   {index < project.links.length - 1 && <span> / </span>}
-                </>
+                </div>
               ))}
             </div>
           </div>
