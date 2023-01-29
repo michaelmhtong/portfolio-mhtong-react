@@ -11,7 +11,7 @@ const Footer = () => {
       transition={{ duration: 1.5 }}
       viewport={{ once: true }}
     >
-      <div className="px-14 py-6 bg-silver md:flex md:justify-between md:items-center md:py-12 lg:px-52">
+      <div className="px-14 py-6 bg-silver md:flex md:justify-between md:items-center md:py-12 lg:px-52 xl:px-[12%] 2xl:px-[14%] 3xl:px-[18%]">
         {/* left */}
         <a href="mailto:mickmhtong@gmail.com">
           <div className="hidden md:flex md:items-center">

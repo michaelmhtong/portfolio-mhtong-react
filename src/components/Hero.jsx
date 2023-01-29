@@ -3,6 +3,7 @@ import { SiGmail, SiGithub, SiLinkedin } from "react-icons/si";
 import { ReactComponent as NavLogo } from "../image/logo.svg";
 import { HiArrowLongLeft } from "react-icons/hi2";
 import { motion, easeInOut } from "framer-motion";
+import { HashLink as Link } from "react-router-hash-link";
 
 const Hero = () => {
   const line1 = "Michael";
@@ -41,7 +42,7 @@ const Hero = () => {
         <div className="w-full bg-silver"></div>
         <motion.div
           variants={sentenceAnimate}
-          className="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] font-heading text-white text-5xl tracking-[0.3em] md:text-6xl lg:text-7xl xl:text-8xl"
+          className="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] font-heading text-white text-6xl tracking-[0.2em] md:text-7xl md:tracking-[0.3em] lg:text-8xl xl:text-9xl 2xl:text-[8rem]"
         >
           <p>
             {line1
@@ -84,14 +85,16 @@ const Hero = () => {
         </div>
         {/* scroll text */}
         <div className="absolute rotate-[-90deg] bottom-8 mr-8 text-white text-[8px] md:text-[10px] md:bottom-9 md:mr-12 lg:bottom-12 lg:mr-14 lg:text-xs">
-          <motion.div
-            variants={arrowAnimate}
-            animate="animation"
-            className="flex justify-center items-center"
-          >
-            <HiArrowLongLeft className="mr-2" />
-            Scroll
-          </motion.div>
+          <Link to="#skill" smooth>
+            <motion.div
+              variants={arrowAnimate}
+              animate="animation"
+              className="flex justify-center items-center"
+            >
+              <HiArrowLongLeft className="mr-2" />
+              Scroll
+            </motion.div>
+          </Link>
         </div>
       </section>
       <section></section>

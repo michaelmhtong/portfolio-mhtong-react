@@ -34,7 +34,7 @@ const Navbar = () => {
       <section
         className={
           nav
-            ? "fixed z-50 left-0 top-0 w-full h-screen ease-in duration-500"
+            ? "fixed z-50 left-0 top-0 w-screen h-screen ease-in duration-500"
             : "fixed z-50 left-[-100%] top-0 w-full h-screen ease-in duration-500"
         }
       >
@@ -43,7 +43,7 @@ const Navbar = () => {
           <div className="bg-silver grow-[5] pt-20 pb-8 pl-12 md:pl-20 md:pb-12 lg:pl-32 lg:pb-20 xl:pb-24">
             <div className="flex flex-col justify-between h-full">
               {/* close button */}
-              <HiOutlineX size={40} onClick={handleNav} className="absolute top-1/2 left-10" />
+              <HiOutlineX size={40} onClick={handleNav} className="hidden md:block absolute top-1/2 left-10" />
               {/* tab top */}
               <div>
                 <NavLogo className="w-10 h-10 fill-olive md:inline-block lg:w-12 lg:h-12 xl:w-14 xl:h-14" />

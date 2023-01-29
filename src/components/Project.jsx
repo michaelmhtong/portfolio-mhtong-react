@@ -1,5 +1,5 @@
 import Tilt from "react-parallax-tilt";
-import ModalHeading from "./model/ModalHeading";
+import ModalHeading from "./ModalHeading";
 import { motion, easeInOut } from "framer-motion";
 
 const Project = () => {
@@ -31,7 +31,7 @@ const Project = () => {
       imgAlt: "",
       skills: ["Javascript", "p5.js", "Algorithm"],
       description:
-        "2D shooting game utilizing a ray-casting algorithm for the game mechanics. The project is visualized on a website using Javascript, Three.js, Twinmotion, and Building Information Modelling (BIM) software. Housing complex designed in the Architectural Engineering Graduation Studio.",
+        "2D shooting game utilizing a ray-casting algorithm for the game mechanics. The player must use a limited angle and view to shoot enemies, with randomly generated wall blocks that change the gameplay experience each time.",
       links: [
         {
           text: "Live demo",
@@ -76,7 +76,7 @@ const Project = () => {
   return (
     <motion.div
       id="project"
-      className="px-12 py-12 bg-silver md:px-32 md:py-20 lg:pt-10 lg:pb-28 xl:px-64 xl:pb-32"
+      className="overflow-hidden px-12 py-12 bg-silver md:px-32 md:py-20 lg:pt-10 lg:pb-28 xl:pb-32 xl:px-[12%] 2xl:px-[14%] 3xl:px-[18%]"
       initial="hidden"
       whileInView="visible"
     >
@@ -97,37 +97,39 @@ const Project = () => {
           }`}
           initial={index % 2 !== 0 ? { x: -200, opacity: 0 } : { x: 200, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          transition={{ ease: easeInOut, duration: 2, delay: 1 }}
+          transition={{ ease: easeInOut, duration: 1.2, delay: 0.7 }}
           viewport={{ once: true }}
         >
           {/* img */}
-          <Tilt className="pb-4 w-full md:w-10/12 md:container md:m-auto lg:w-full lg:mx-0 lg:my-auto">
+          <Tilt className="pb-4 w-full md:w-10/12 md:container md:m-auto lg:self-end">
             <img src={project.imgSrc} className="lg:max-h-[450px]"></img>
           </Tilt>
           {/* text */}
           <div
             className={`lg:self-center ${
-              index % 2 !== 0 ? "lg:pr-20 xl:pr:44" : "lg:pl-16 xl:pl:32"
+              index % 2 !== 0 ? "lg:pr-20 xl:pr-44 2xl:pr-60" : "lg:pl-16 xl:pl:32"
             }`}
           >
             <div className="font-oblique text-xl">0{index + 1}.</div>
-            <div className="font-heading text-2xl text-palm lg:text-3xl xl:text-4xl">
+            <div className="font-heading text-2xl text-palm lg:text-3xl 2xl:xl:text-4xl xl:py-1">
               {project.title}
             </div>
-            <div className="font-heading text-sm lg:text-base xl:text:lg">{project.year}</div>
+            <div className="font-heading text-sm lg:text-base xl:text-lg 2xl:text-xl">
+              {project.year}
+            </div>
             {/* badges */}
-            <div className="py-1">
+            <div className="py-1 xl:py-2">
               {project.skills.map((skill, index) => (
                 <span
                   key={index}
-                  className="inline-flex items-center mr-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-50 lg:mr-2"
+                  className="inline-flex items-center mr-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-50 lg:mr-2 xl:text-sm"
                 >
                   {skill}
                 </span>
               ))}
             </div>
-            <div className="pt-3 pb-6 text-sm lg:text-base">{project.description}</div>
-            <div className="font-oblique text-base lg:text-lg xl:text-xl">
+            <div className="pt-3 pb-6 text-sm lg:text-base xl:text-lg">{project.description}</div>
+            <div className="font-oblique text-base lg:text-lg xl:text-xl 2xl:text-2xl">
               {project.links.map((link, index) => (
                 <>
                   <a href={link.href} target="_blank">

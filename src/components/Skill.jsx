@@ -1,6 +1,7 @@
 import React from "react";
 import { Cloud, renderSimpleIcon } from "react-icon-cloud";
 import { easeInOut, motion } from "framer-motion";
+import ModalHeading from "./ModalHeading";
 import {
   siJavascript,
   siReact,
@@ -22,7 +23,6 @@ import {
   siAdobeindesign,
   siRhinoceros,
 } from "simple-icons";
-import ModalHeading from "./model/ModalHeading";
 
 const Skill = () => {
   const icons = [
@@ -55,7 +55,7 @@ const Skill = () => {
   return (
     <div
       id="skill"
-      className="overflow-hidden flex justify-between flex-col px-12 pt-24 pb-12 bg-silver md:px-32 md:pt-32 lg:flex-row lg:py-10 xl:px-64"
+      className="overflow-hidden flex justify-between flex-col px-12 pt-24 pb-12 bg-silver md:px-32 md:pt-32 lg:flex-row lg:py-10 xl:px-[12%] 2xl:px-[14%] 3xl:px-[18%]"
     >
       <div className="lg:self-center">
         {/* title */}
@@ -66,7 +66,7 @@ const Skill = () => {
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ ease: easeInOut, duration: 1, delay: 1 }}
           viewport={{ once: true }}
-          className="mt-4 text-xs xl:text-sm"
+          className="mt-4 text-xs xl:text-sm 2xl:text-base"
         >
           <li>
             Proficient: Javascript | React | Tailwind CSS | Node | Express | MongoDB | PostgreSQL
@@ -79,11 +79,11 @@ const Skill = () => {
       </div>
       {/* iconcloud */}
       <motion.div
-        initial={{ x: 500, opacity: 0 }}
+        initial={{ x: 100, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ ease: easeInOut, duration: 2, delay: 1 }}
         viewport={{ once: true }}
-        className="pt-4 justify-self-center lg:max-w-md xl:max-w-lg 2xl:max-w-xl"
+        className="pt-4 justify-self-center lg:max-w-md xl:max-w-lg 2xl:max-w-xl 3xl:max-w-2xl"
       >
         <Cloud
           containerProps={{

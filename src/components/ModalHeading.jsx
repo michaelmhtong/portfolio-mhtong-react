@@ -5,7 +5,7 @@ const ModalHeading = ({ title, subtitle, word }) => {
 
   const svgAnimate = {
     hidden: { opacity: 0, pathLength: 0 },
-    visible: { opacity: 1, pathLength: 1, transition: { ease: easeIn, duration: 1 } },
+    visible: { opacity: 1, pathLength: 1, transition: { ease: easeIn, duration: 1, delay: 1 } },
   };
 
   const svgPath = [
@@ -56,7 +56,7 @@ const ModalHeading = ({ title, subtitle, word }) => {
         fill="none"
         stroke="#a5ae9d"
         strokeWidth="8"
-        className="w-10 h-10 inline-block"
+        className="w-10 h-10 inline-block lg:w-14 lg:h-14"
       >
         {svgPath.map((path, index) => (
           <motion.path key={index} variants={svgAnimate} d={path} />
@@ -64,7 +64,7 @@ const ModalHeading = ({ title, subtitle, word }) => {
       </svg>
 
       {/* heading */}
-      <p className="pb-3 font-heading text-palm text-5xl xl:text-6xl">
+      <p className="pb-3 font-heading text-palm text-5xl xl:text-6xl 2xl:text-7xl">
         <span className="overflow-hidden inline-block">
           <motion.span className="inline-block pb-2" variants={item}>
             {title.toUpperCase().slice(0, 3)}
@@ -79,7 +79,7 @@ const ModalHeading = ({ title, subtitle, word }) => {
       </p>
 
       {/* subheading */}
-      <motion.p variants={subAnimate} className="pb-2 font-heading text-2xl xl:text-3xl">
+      <motion.p variants={subAnimate} className="pb-2 font-heading text-2xl xl:text-3xl 2xl:text-4xl">
         {subtitleArray[0]}
         <i className="font-oblique">{word}</i>
         {subtitleArray[1]}

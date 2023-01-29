@@ -14,6 +14,9 @@ module.exports = {
         olive: "#41493b",
         light: "#a5ae9d",
       },
+      screens: {
+        "3xl": "1920px",
+      },
     },
   },
   plugins: [],
