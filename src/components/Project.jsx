@@ -1,5 +1,5 @@
 import Tilt from "react-parallax-tilt";
-import ModalHeading from "./model/ModalHeading";
+import ModalHeading from "./ModalHeading";
 import { motion, easeInOut } from "framer-motion";
 
 const Project = () => {

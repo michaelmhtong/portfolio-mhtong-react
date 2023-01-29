@@ -1,6 +1,6 @@
 import React from "react";
 import { motion, easeIn, easeInOut } from "framer-motion";
-import ModalHeading from "./model/ModalHeading";
+import ModalHeading from "./ModalHeading";
 
 const Experience = () => {
   const experiences = [

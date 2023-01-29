@@ -1,6 +1,7 @@
 import React from "react";
 import { Cloud, renderSimpleIcon } from "react-icon-cloud";
 import { easeInOut, motion } from "framer-motion";
+import ModalHeading from "./ModalHeading";
 import {
   siJavascript,
   siReact,
@@ -22,7 +23,6 @@ import {
   siAdobeindesign,
   siRhinoceros,
 } from "simple-icons";
-import ModalHeading from "./model/ModalHeading";
 
 const Skill = () => {
   const icons = [
