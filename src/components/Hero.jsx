@@ -3,6 +3,7 @@ import { Cursor, useTypewriter } from "react-simple-typewriter";
 import { SiGmail, SiGithub, SiLinkedin } from "react-icons/si";
 import { ReactComponent as NavLogo } from "../image/logo.svg";
 import { HiArrowLongLeft } from "react-icons/hi2";
+import { motion, easeInOut } from "framer-motion";
 
 const Hero = () => {
   const [text, count] = useTypewriter({
@@ -16,33 +17,97 @@ const Hero = () => {
     delaySpeed: 2000,
   });
 
+  const line1 = "Michael";
+  const line2 = "Tong.";
+
+  const sentenceAnimate = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delay: 0.5,
+        staggerChildren: 0.08,
+      },
+    },
+  };
+  const letterAnimate = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const arrowAnimate = {
+    animation: {
+      x: [0, 20, 0],
+      transition: {
+        repeat: Infinity,
+        duration: 1,
+        ease: easeInOut,
+      },
+    },
+  };
+
   return (
-    <div>
+    <motion.div id="home" initial="hidden" animate="visible">
       <section className="flex relative h-screen justify-center align-middle">
         <div className="w-full bg-palm"></div>
         <div className="w-full bg-silver"></div>
-        <div className="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] font-heading text-white text-5xl tracking-[0.3em] md:text-6xl lg:text-7xl xl:text-8xl">
-          <p>MICHAEL</p>
-          <p className="pt-2 md:pt-4 lg:pt-6 xl:pt-8">
-            TONG<span className="text-palm">.</span>
+        <motion.div
+          variants={sentenceAnimate}
+          className="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] font-heading text-white text-5xl tracking-[0.3em] md:text-6xl lg:text-7xl xl:text-8xl"
+        >
+          <p>
+            {line1
+              .toUpperCase()
+              .split("")
+              .map((char, index) => (
+                <motion.span key={index} variants={letterAnimate}>
+                  {char}
+                </motion.span>
+              ))}
           </p>
-        </div>
+          <p className="pt-2 md:pt-4 lg:pt-6 xl:pt-8">
+            {line2
+              .toUpperCase()
+              .split("")
+              .map((char, index) => (
+                <motion.span
+                  key={index}
+                  variants={letterAnimate}
+                  className={index === line2.length - 1 ? "text-palm" : ""}
+                >
+                  {char}
+                </motion.span>
+              ))}
+          </p>
+        </motion.div>
         {/* logo */}
         <NavLogo className="absolute h-11 top-14 left-10 fill-silver lg:h-14 lg:left-20 xl:h-16 xl:left-24" />
         {/* social */}
         <div className="hidden absolute md:flex flex-col h-full justify-center space-y-6 right-10 lg:right-16 lg:space-y-8 xl:right-20 xl:space-y-10">
-          <SiGmail size={20} /> <SiGithub size={20} /> <SiLinkedin size={20} />
+          <a href="mailto:mickmhtong@gmail.com">
+            <SiGmail size={20} />{" "}
+          </a>
+          <a href="https://github.com/michaelmhtong" target="_blank">
+            <SiGithub size={20} />
+          </a>{" "}
+          <a href="https://www.linkedin.com/in/mhtong/" target="_blank">
+            <SiLinkedin size={20} />
+          </a>
         </div>
         {/* scroll text */}
         <div className="absolute rotate-[-90deg] bottom-8 mr-8 text-white text-[8px] md:text-[10px] md:bottom-9 md:mr-12 lg:bottom-12 lg:mr-14 lg:text-xs">
-          <div className="flex justify-center items-center">
+          <motion.div
+            variants={arrowAnimate}
+            animate="animation"
+            className="flex justify-center items-center"
+          >
             <HiArrowLongLeft className="mr-2" />
             Scroll
-          </div>
+          </motion.div>
         </div>
       </section>
       <section></section>
-    </div>
+    </motion.div>
     // <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center">
     //   <h1></h1>
     //   <div>
