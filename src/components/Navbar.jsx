@@ -18,10 +18,7 @@ const Navbar = () => {
       {/* Navbar */}
       <section>
         {/* icon for mobile */}
-        <div
-          onClick={handleNav}
-          className="fixed z-30 flex justify-end w-full px-10 pt-14"
-        >
+        <div onClick={handleNav} className="fixed z-30 flex justify-end w-full px-10 pt-14">
           <HiOutlineMenuAlt3
             size={40}
             className="lg:hidden top-5 text-white bg-palm border-palm rounded-full border-4"
@@ -49,6 +46,8 @@ const Navbar = () => {
           {/* tab content */}
           <div className="bg-silver grow-[5] pt-20 pb-8 pl-12 md:pl-20 md:pb-12 lg:pl-32 lg:pb-20 xl:pb-24">
             <div className="flex flex-col justify-between h-full">
+              {/* close button */}
+              <HiOutlineX size={40} onClick={handleNav} className="absolute top-1/2 left-10" />
               {/* tab top */}
               <div>
                 <NavLogo className="w-10 h-10 fill-olive md:inline-block lg:w-12 lg:h-12 xl:w-14 xl:h-14" />
@@ -119,7 +118,7 @@ const Navbar = () => {
             onClick={handleNav}
             className="flex justify-center cursor-pointer bg-palm grow pt-20"
           >
-            <HiOutlineX size={30} className="" />
+            <HiOutlineX size={30} className="md:hidden" />
           </div>
         </div>
       </section>
