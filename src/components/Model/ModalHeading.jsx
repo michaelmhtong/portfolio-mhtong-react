@@ -1,6 +1,4 @@
-import { useEffect } from "react";
-import { easeIn, easeInOut, motion, useAnimationControls } from "framer-motion";
-import { ReactComponent as Symbol } from "../../image/symbol.svg";
+import { easeIn, motion } from "framer-motion";
 
 const ModalHeading = ({ title, subtitle, word }) => {
   const subtitleArray = subtitle.split("*");
@@ -37,11 +35,20 @@ const ModalHeading = ({ title, subtitle, word }) => {
 
   const subAnimate = {
     hidden: { y: 10, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { ease: easeIn, duration: 0.5, delay: 1 } },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { ease: easeIn, duration: 0.5, delay: 1 },
+    },
   };
 
   return (
-    <motion.div initial="hidden" whileInView="visible" variants={container}>
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={container}
+    >
       {/* svg */}
       <svg
         xmlns="http://www.w3.org/2000/svg"
