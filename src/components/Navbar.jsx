@@ -53,27 +53,52 @@ const Navbar = () => {
                 <NavLogo className="w-10 h-10 fill-olive md:inline-block lg:w-12 lg:h-12 xl:w-14 xl:h-14" />
                 <ul className="grid gap-4 font-heading text-3xl pt-7 md:gap-5 lg:pt-9 lg:gap-6 lg:text-4xl xl:pt-10 xl:gap-7">
                   <li>
-                    <Link to="#home" onClick={handleNav} smooth>
+                    <Link
+                      to="#home"
+                      onClick={handleNav}
+                      smooth
+                      className="hover-underline-animation"
+                    >
                       Home<span className="text-palm">.</span>
                     </Link>
                   </li>
                   <li>
-                    <Link to="#about" onClick={handleNav} smooth>
+                    <Link
+                      to="#about"
+                      onClick={handleNav}
+                      smooth
+                      className="hover-underline-animation"
+                    >
                       About<span className="text-palm">.</span>
                     </Link>
                   </li>
                   <li>
-                    <Link to="#skill" onClick={handleNav} smooth>
+                    <Link
+                      to="#skill"
+                      onClick={handleNav}
+                      smooth
+                      className="hover-underline-animation"
+                    >
                       Skill<span className="text-palm">.</span>
                     </Link>
                   </li>
                   <li>
-                    <Link to="#experience" onClick={handleNav} smooth>
+                    <Link
+                      to="#experience"
+                      onClick={handleNav}
+                      smooth
+                      className="hover-underline-animation"
+                    >
                       Experience<span className="text-palm">.</span>
                     </Link>
                   </li>
                   <li>
-                    <Link to="#project" onClick={handleNav} smooth>
+                    <Link
+                      to="#project"
+                      onClick={handleNav}
+                      smooth
+                      className="hover-underline-animation"
+                    >
                       Project<span className="text-palm">.</span>
                     </Link>
                   </li>

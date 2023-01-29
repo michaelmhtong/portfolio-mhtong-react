@@ -2,33 +2,25 @@ html {
   @apply text-[#41493B];
 }
 
-.title {
-  @apply absolute top-24 tracking-[20px] uppercase text-[#62973D] text-2xl;
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
 }
 
-.pageTransition {
-  @apply h-screen flex relative overflow-hidden flex-col md:flex-row max-w-full px-10 justify-evenly mx-auto items-center;
+.hover-underline-animation::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #62973d;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
 }
 
-.heroButton {
-  @apply ml-10 tracking-widest uppercase text-sm text-white transition-all hover:border-b;
-}
-
-.contactInput {
-  @apply outline-none bg-[#62973D]/10 rounded-sm border-b px-6 py-4 
-  text-[#41493B] placeholder-[#A5AE9D] transition-all 
-  focus:border-[#62973D] focus:text-black hover:border-[#62973D]/40;
-}
-
-.timeline-container {
-  @apply relative pt-2 sm:pl-28 sm:pt-0 md:w-1/2 md:ml-auto md:pl-16;
-}
-.timeline-container-left {
-  @apply md:ml-0 md:mr-auto md:pl-0 md:pr-16;
-}
-.timeline-pointer {
-  @apply absolute inset-0 left-10 h-4 w-4 transform rotate-45 bg-white sm:top-10 sm:left-20 md:left-14;
-}
-.timeline-pointer-left {
-  @apply md:left-auto md:right-14;
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
