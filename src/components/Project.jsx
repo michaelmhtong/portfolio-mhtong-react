@@ -4,6 +4,7 @@ import Tilt from "react-parallax-tilt";
 import ModalHeading from "./model/ModalHeading";
 import ModalPano from "./model/ModalPano";
 import ModalYoutube from "./model/ModalYoutube";
+import { motion, easeInOut } from "framer-motion";
 
 const Project = () => {
   const [openModalVideo, setOpenModalVideo] = useState(false);
@@ -68,7 +69,7 @@ const Project = () => {
       links: [
         {
           text: "Live demo",
-          href: "https://threed.mhtong.tech/",
+          href: "/reconet",
         },
         {
           text: "Project video",
@@ -78,12 +79,12 @@ const Project = () => {
     },
   ];
 
-  const symbol = "/assets/symbol.svg";
-
   return (
-    <div
+    <motion.div
       id="project"
       className="px-12 py-12 bg-silver md:px-32 md:py-20 lg:pt-10 lg:pb-28 xl:px-64 xl:pb-32"
+      initial="hidden"
+      whileInView="visible"
     >
       {/* title */}
       <div className="pb-8">
@@ -94,13 +95,16 @@ const Project = () => {
         />
       </div>
       {/* content */}
-
       {projects.map((project, index) => (
-        <div
+        <motion.div
           id={index}
           className={`py-6 md:py-10 lg:flex lg:py-12 xl:py-16 ${
             index % 2 !== 0 ? "lg:flex-row-reverse" : ""
           }`}
+          initial={index % 2 !== 0 ? { x: -200, opacity: 0 } : { x: 200, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ ease: easeInOut, duration: 2, delay: 1 }}
+          viewport={{ once: true }}
         >
           {/* img */}
           <Tilt className="pb-4 w-full md:w-10/12 md:container md:m-auto lg:w-full lg:mx-0 lg:my-auto">
@@ -140,9 +144,9 @@ const Project = () => {
               ))}
             </div>
           </div>
-        </div>
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
     // <div className="relative bg-white pt-16 pb-32 overflow-hidden">
     //   {projects.map((project, index) => (
     //     <div className="relative" key={index}>
