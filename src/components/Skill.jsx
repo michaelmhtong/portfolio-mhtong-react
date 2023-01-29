@@ -64,7 +64,7 @@ const Skill = () => {
         <motion.ul
           initial={{ y: 100, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
-          transition={{ ease: easeInOut, duration: 1, delay: 1 }}
+          transition={{ ease: easeInOut, duration: 1, delay: 0.5 }}
           viewport={{ once: true }}
           className="mt-4 text-xs xl:text-sm 2xl:text-base"
         >
@@ -81,7 +81,7 @@ const Skill = () => {
       <motion.div
         initial={{ x: 100, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
-        transition={{ ease: easeInOut, duration: 2, delay: 1 }}
+        transition={{ ease: easeInOut, duration: 2, delay: 0.5 }}
         viewport={{ once: true }}
         className="pt-4 justify-self-center lg:max-w-md xl:max-w-lg 2xl:max-w-xl 3xl:max-w-2xl"
       >

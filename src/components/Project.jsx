@@ -97,7 +97,7 @@ const Project = () => {
           }`}
           initial={index % 2 !== 0 ? { x: -200, opacity: 0 } : { x: 200, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          transition={{ ease: easeInOut, duration: 1.2, delay: 0.7 }}
+          transition={{ ease: easeInOut, duration: 1.2, delay: 0.5 }}
           viewport={{ once: true }}
         >
           {/* img */}

@@ -82,7 +82,7 @@ const Experience = () => {
                 strokeWidth="4"
                 initial={{ pathLength: 0 }}
                 animate={entered === true ? { pathLength: 1 } : { pathLength: 0 }}
-                transition={{ ease: easeIn, duration: 0.8, delay: 0.8 }}
+                transition={{ ease: easeIn, duration: 0.8, delay: 0.5 }}
               />
             </svg>
           </div>
@@ -93,7 +93,7 @@ const Experience = () => {
               className="overflow-hidden pl-8"
               initial={{ x: 100, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
-              transition={{ ease: easeInOut, duration: 0.8, delay: 0.8 }}
+              transition={{ ease: easeInOut, duration: 0.8, delay: 0.5 }}
               viewport={{ once: true }}
             >
               {/* point circle */}
