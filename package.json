@@ -13,6 +13,7 @@
     "react-dom": "^18.2.0",
     "react-icon-cloud": "^4.1.4",
     "react-icons": "^4.7.1",
+    "react-intersection-observer": "^9.4.1",
     "react-modal": "^3.16.1",
     "react-parallax-tilt": "^1.7.90",
     "react-router-dom": "^6.7.0",
