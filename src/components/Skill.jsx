@@ -1,6 +1,6 @@
 import React from "react";
 import { Cloud, renderSimpleIcon } from "react-icon-cloud";
-import { easeIn, easeInOut, motion } from "framer-motion";
+import { easeInOut, motion } from "framer-motion";
 import {
   siJavascript,
   siReact,
@@ -65,6 +65,7 @@ const Skill = () => {
           initial={{ y: 100, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ ease: easeInOut, duration: 1, delay: 1 }}
+          viewport={{ once: true }}
           className="mt-4 text-xs xl:text-sm"
         >
           <li>
@@ -81,6 +82,7 @@ const Skill = () => {
         initial={{ x: 500, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ ease: easeInOut, duration: 2, delay: 1 }}
+        viewport={{ once: true }}
         className="pt-4 justify-self-center lg:max-w-md xl:max-w-lg 2xl:max-w-xl"
       >
         <Cloud
