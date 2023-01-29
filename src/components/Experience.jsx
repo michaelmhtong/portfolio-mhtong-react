@@ -1,10 +1,8 @@
 import React from "react";
-import { easeInOut, motion, useScroll } from "framer-motion";
+import { motion, easeIn, easeInOut } from "framer-motion";
 import ModalHeading from "./model/ModalHeading";
 
 const Experience = () => {
-  const { scrollYProgress } = useScroll();
-
   const experiences = [
     {
       imageSrc: "/assets/ptsa.svg",
@@ -49,30 +47,45 @@ const Experience = () => {
     },
   ];
 
-  const symbol = "/assets/symbol.svg";
-
   return (
-    <div id="experience" className="flex flex-col px-12 py-12 bg-silver md:px-32 md:py-20 xl:px-64">
+    <div
+      id="experience"
+      className="overflow-hidden flex flex-col px-12 py-12 bg-silver md:px-32 md:py-20 xl:px-64"
+    >
       {/* title */}
       <div className="text-right pb-4">
         <ModalHeading title="Experience" subtitle="Journey towards * industry" word="Tech" />
       </div>
       <div className="relative container flex flex-col space-y-10 pb-10 md:space-y-14">
         {/* timeline */}
-        <motion.div
-          initial={{ x: -100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ ease: easeInOut, duration: 2 }}
-          className="absolute z-0 w-0.5 left-1.5 h-full bg-palm inset-0"
-        ></motion.div>
+        <div className="absolute z-0 w-0.5 left-[6.5px] h-full inset-0">
+          <svg width="full" height="full">
+            <motion.line
+              y2="100%"
+              stroke="#62973d"
+              strokeWidth="4"
+              initial={{ pathLength: 0 }}
+              animate={{ pathLength: 1 }}
+              transition={{ ease: easeIn, duration: 2, delay: 1 }}
+            />
+            {/* <motion.path
+            className="overflow-visible"
+              initial={{ pathLength: 0 }}
+              animate={{ pathLength: 1 }}
+              transition={{ ease: easeIn, duration: 2, delay: 1 }}
+              d="M17.1,6.2v440.5"
+            /> */}
+          </svg>
+        </div>
         {/* content */}
         {experiences.map((experience, index) => (
           <motion.div
-            initial={{ x: 500, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ ease: easeInOut, duration: 2 }}
             id={index}
             className="pl-8"
+            initial={{ x: 500, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ ease: easeInOut, duration: 1, delay: 1 }}
+            viewport={{ once: true }}
           >
             {/* point circle */}
             <span className="absolute left-0 h-4 w-4 rounded-full bg-palm"></span>
