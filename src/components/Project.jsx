@@ -1,14 +1,8 @@
-import { useState } from "react";
-import { HiGlobeAlt } from "react-icons/hi";
 import Tilt from "react-parallax-tilt";
 import ModalHeading from "./model/ModalHeading";
-import ModalPano from "./model/ModalPano";
-import ModalYoutube from "./model/ModalYoutube";
 import { motion, easeInOut } from "framer-motion";
 
 const Project = () => {
-  const [openModalVideo, setOpenModalVideo] = useState(false);
-  const [openModalPano, setOpenModalPano] = useState(false);
   const projects = [
     {
       title: "LuxeShop (with Stripe payment).",
@@ -147,95 +141,6 @@ const Project = () => {
         </motion.div>
       ))}
     </motion.div>
-    // <div className="relative bg-white pt-16 pb-32 overflow-hidden">
-    //   {projects.map((project, index) => (
-    //     <div className="relative" key={index}>
-    //       <div className="lg:pb-16 lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
-    //         {/* Content */}
-    //         <div className="px-4 max-w-xl mx-auto sm:px-6 lg:py-16 lg:max-w-none lg:mx-0 lg:px-0">
-    //           <div className="mt-6">
-    //             <div>0{index + 1}</div>
-    //             <div className="text-3xl font-extrabold tracking-tight text-gray-900">
-    //               {project.title}
-    //             </div>
-    //             <div className="mt-4 text-base text-gray-500">{project.year}</div>
-    //             {/* badges */}
-    //             <div>
-    //               {project.skills.map((skill, index) => (
-    //                 <span
-    //                   key={index}
-    //                   className="inline-flex items-center mr-2 px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800"
-    //                 >
-    //                   {skill}
-    //                 </span>
-    //               ))}
-    //             </div>
-    //             <p>{project.description}</p>
-    //             <div>
-    //               <button
-    //                 type="button"
-    //                 onClick={() => setOpenModalPano(true)}
-    //                 className="inline-flex items-center px-3 py-2 border border-transparent shadow-sm text-sm leading-4 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-    //               >
-    //                 <HiGlobeAlt className="-ml-0.5 mr-2 h-4 w-4" aria-hidden="true" />
-    //                 Live demo
-    //               </button>
-    //               <ModalPano open={openModalPano} onClose={() => setOpenModalPano(false)} />
-    //             </div>
-
-    //             {/* only show if there is video */}
-    //             {project.video && (
-    //               <div>
-    //                 <button
-    //                   type="button"
-    //                   onClick={() => setOpenModalVideo(true)}
-    //                   className="inline-flex items-center px-3 py-2 border border-transparent shadow-sm text-sm leading-4 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-    //                 >
-    //                   <HiGlobeAlt className="-ml-0.5 mr-2 h-4 w-4" aria-hidden="true" />
-    //                   Video
-    //                 </button>
-    //                 <ModalYoutube open={openModalVideo} onClose={() => setOpenModalVideo(false)} />
-    //               </div>
-    //             )}
-    //           </div>
-    //         </div>
-
-    //         {/* Image */}
-    //         <div className="relative mx-16">
-    //           <Tilt
-    //             // scale={0.8}
-    //             perspective={800}
-    //             style={{ transformStyle: "preserve-3d" }}
-    //             // reset={false}
-    //             tiltAngleYInitial={15}
-    //             gyroscope={true}
-    //           >
-    //             <div className="absolute">
-    //               <img src={project.deviceSrc} alt={project.deviceAlt}></img>
-    //             </div>
-    //             {project.title !== "ReCoNet" ? (
-    //               <div
-    //                 style={{ transform: "translateZ(100px) scale(0.88)" }}
-    //                 className="absolute shadow-2xl"
-    //               >
-    //                 {/* sm:pl-6 md:-mr-16 lg:px-0 lg:m-0 lg:relative lg:h-full */}
-    //                 <img src={project.imgSrc} alt={project.imgAlt}></img>
-    //               </div>
-    //             ) : (
-    //               <div
-    //                 style={{ transform: "translateZ(100px) scale(0.88)" }}
-    //                 className="absolute shadow-2xl top-12 right-10"
-    //               >
-    //                 {/* sm:pl-6 md:-mr-16 lg:px-0 lg:m-0 lg:relative lg:h-full */}
-    //                 <img src={project.imgSrc} alt={project.imgAlt}></img>
-    //               </div>
-    //             )}
-    //           </Tilt>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   ))}
-    // </div>
   );
 };
 

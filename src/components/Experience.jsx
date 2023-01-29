@@ -68,13 +68,6 @@ const Experience = () => {
               animate={{ pathLength: 1 }}
               transition={{ ease: easeIn, duration: 2, delay: 1 }}
             />
-            {/* <motion.path
-            className="overflow-visible"
-              initial={{ pathLength: 0 }}
-              animate={{ pathLength: 1 }}
-              transition={{ ease: easeIn, duration: 2, delay: 1 }}
-              d="M17.1,6.2v440.5"
-            /> */}
           </svg>
         </div>
         {/* content */}
@@ -107,49 +100,6 @@ const Experience = () => {
         ))}
       </div>
     </div>
-
-    // <div className="relative container mx-auto px-6 flex flex-col space-y-20">
-    //   {/* TimeLine */}
-    //   <div className="absolute z-0 w-2 h-full bg-white shadow-md inset-0 left-16 md:mx-auto md:right-0 md:left-0"></div>
-
-    //   {/* Content */}
-    //   {experiences.map((experience, index) => (
-    //     <motion.div
-    //       className="relative z-10"
-    //       initial={{ x: index % 2 !== 0 ? 100 : -100, opacity: 0 }} // odd index: x:-100, even index: x:100
-    //       whileInView={{ x: 0, opacity: 1 }}
-    //       transition={{ duration: 1.5 }}
-    //       key={index}
-    //     >
-    //       <img
-    //         src={experience.imageSrc}
-    //         alt=""
-    //         className="h-24 w-24 bg-white object-fit-contain rounded-full shadow-md border-4 border-white sm:absolute md:mx-auto md:left-0 md:right-0"
-    //       />
-    //       <div
-    //         className={`${
-    //           index % 2 !== 0 ? "timeline-container" : "timeline-container timeline-container-left" // even index left
-    //         }`}
-    //       >
-    //         <div
-    //           className={`${
-    //             index % 2 !== 0 ? "timeline-pointer" : "timeline-pointer timeline-pointer-left" // even index left
-    //           }`}
-    //           aria-hidden="true"
-    //         ></div>
-
-    //         <div className="bg-white p-6 rounded-md shadow-md">
-    //           <span className="font-bold text-indigo-600 text-sm tracking-wide">
-    //             {experience.startDate} - {experience.endDate}
-    //           </span>
-    //           <h1 className="text-2xl font-bold pt-1">{experience.position}</h1>
-    //           <p className="pt-1">{experience.companyName}</p>
-    //           <p>{experience.summaryPoints}</p>
-    //         </div>
-    //       </div>
-    //     </motion.div>
-    //   ))}
-    // </div>
   );
 };
 
