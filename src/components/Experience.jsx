@@ -7,26 +7,28 @@ import ModalHeading from "./ModalHeading";
 const Experience = () => {
   const experiences = [
     {
-      imageSrc: "/assets/ptsa.svg",
-      imageAlt: "",
+      position: "Full Stack Developer.",
+      companyName: "Small Giants",
+      startDate: "Apr 2023",
+      endDate: "Present",
+      summaryPoints: [
+        "Leveraged HTML, CSS, JavaScript and React to construct responsive and interactive web pages",
+        "Customised Ecommerce websites with Shopify to align with client’s business goals, such as Oneill and Duca Del Cosma",
+      ],
+    },
+    {
       position: "Assistant Designer (Computational Design).",
       companyName: "Popma ter Steege Architecten",
-      skillSrc: [""],
-      skilAlt: [""],
       startDate: "Sep 2022",
-      endDate: "Present",
+      endDate: "Feb 2023",
       summaryPoints: [
         "Utilized Python and PDOK API to gather geographic context in the Netherlands, resulting in savings of over EUR 5,000",
         "Optimized solar radiation using Rhino and Grasshopper Scripting, resulting in an 80% increase in efficiency",
       ],
     },
     {
-      imageSrc: "/assets/ptg.svg",
-      imageAlt: "",
       position: "Architectural Designer.",
       companyName: "P&T Architects and Engineers Limited",
-      skillSrc: [""],
-      skilAlt: [""],
       startDate: "Aug 2019",
       endDate: "May 2020",
       summaryPoints: [
@@ -35,12 +37,8 @@ const Experience = () => {
       ],
     },
     {
-      imageSrc: "/assets/biad.svg",
-      imageAlt: "",
       position: "Intern (Computational Design).",
       companyName: "Beijing Institute of Architectural Design (BIAD) Co. Ltd.",
-      skillSrc: [""],
-      skilAlt: [""],
       startDate: "Jun 2019",
       endDate: "Jul 2019",
       summaryPoints: [
@@ -82,7 +80,7 @@ const Experience = () => {
                 strokeWidth="4"
                 initial={{ pathLength: 0 }}
                 animate={entered === true ? { pathLength: 1 } : { pathLength: 0 }}
-                transition={{ ease: easeIn, duration: 0.8, delay: 0.5 }}
+                transition={{ ease: easeIn, duration: 0.8, delay: 0.3 }}
               />
             </svg>
           </div>
@@ -93,7 +91,7 @@ const Experience = () => {
               className="overflow-hidden pl-8"
               initial={{ x: 100, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
-              transition={{ ease: easeInOut, duration: 0.8, delay: 0.5 }}
+              transition={{ ease: easeInOut, duration: 0.8, delay: 0.3 }}
               viewport={{ once: true }}
             >
               {/* point circle */}

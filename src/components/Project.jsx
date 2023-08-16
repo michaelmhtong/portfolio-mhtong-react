@@ -5,7 +5,22 @@ import { motion, easeInOut } from "framer-motion";
 const Project = () => {
   const projects = [
     {
-      title: "LuxeShop (with Stripe payment).",
+      title: "Housing SaaS project (with Stripe payment).",
+      year: "April 2023",
+      imgSrc: "/assets/image/househunter.png",
+      imgAlt: "housing website in monitor",
+      skills: ["Javascript", "React", "NodeJS",  "PostgreSQL", "Stripe", "Google API", "Postmark"],
+      description:
+        "Web scraping service that utilizes email notifications to inform users of newly available rental apartments, which attracted over 200 registered users within just one month",
+      links: [
+        {
+          text: "Live demo",
+          href: "https://househunterpro.nl/",
+        },
+      ],
+    },
+    {
+      title: "LuxeShop (with Adyen).",
       year: "Jan 2023",
       imgSrc: "/assets/image/eshop_computer.png",
       imgAlt: "eshop website in monitor",
@@ -66,7 +81,7 @@ const Project = () => {
           href: "/reconet",
         },
         {
-          text: "Project video",
+          text: "Project video*",
           href: "https://www.youtube.com/watch?v=CrXdIugj3z0&ab_channel=MHTstudio",
         },
       ],
