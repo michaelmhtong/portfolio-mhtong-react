@@ -12,8 +12,9 @@ const Experience = () => {
       startDate: "Apr 2023",
       endDate: "Present",
       summaryPoints: [
-        "Leveraged HTML, CSS, JavaScript and React to construct responsive and interactive web pages",
-        "Customised Ecommerce websites with Shopify to align with client’s business goals, such as Oneill and Duca Del Cosma",
+        "Leveraged Frontend tools like React, SCSS, and JavaScript integrated with StoryBlok to develop a headless CMS",
+        "Customized the design and functionality of Shopify Websites to align with client's goals, such as O’Neill and Duca Del Cosma",
+        "Implemented Backend technologies including Node.js, REST API, GraphQL and SQL to enable efficient data handling"
       ],
     },
     {
@@ -27,6 +28,16 @@ const Experience = () => {
       ],
     },
     {
+      position: "IT Support Technician (Part-time).",
+      companyName: "Candace Guidance Signage Limited",
+      startDate: "Jul 2018",
+      endDate: "Jun 2020",
+      summaryPoints: [
+        "Built a user-friendly website using WordPress resulted in increased traffic and engagement",
+        "Provided daily IT support, including troubleshooting hardware and software issues which improve team productivity",
+      ],
+    },
+    {
       position: "Architectural Designer.",
       companyName: "P&T Architects and Engineers Limited",
       startDate: "Aug 2019",
@@ -34,15 +45,6 @@ const Experience = () => {
       summaryPoints: [
         "Generated an optimized layout plan for an Apartment-Complex using Grasshopper Scripting",
         "Created 3D renderings of a Community Health Centre using Twinmotion and Adobe Creative Suite",
-      ],
-    },
-    {
-      position: "Intern (Computational Design).",
-      companyName: "Beijing Institute of Architectural Design (BIAD) Co. Ltd.",
-      startDate: "Jun 2019",
-      endDate: "Jul 2019",
-      summaryPoints: [
-        "Enhanced the circulation design for the Beijing Winter Olympics 2022 by utilizing Grasshopper Scripting",
       ],
     },
   ];
