@@ -30,7 +30,7 @@ const Project = () => {
       links: [
         {
           text: "Live demo",
-          href: "https://eshop.mhtong.tech/",
+          href: "https://eshop.mtong.tech/",
         },
         {
           text: "Github",
@@ -50,7 +50,7 @@ const Project = () => {
       links: [
         {
           text: "Live demo",
-          href: "https://game.mhtong.tech/",
+          href: "https://game.mtong.tech/",
         },
         {
           text: "Github",
